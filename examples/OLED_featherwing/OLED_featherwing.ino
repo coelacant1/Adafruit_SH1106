@@ -1,7 +1,7 @@
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
-#include "..\..\Adafruit_SH1106.h"
+#include "../../Adafruit_SH1106.h"
 
 // OLED FeatherWing buttons map to different pins depending on board.
 // The I2C (Wire) bus may also be different.
