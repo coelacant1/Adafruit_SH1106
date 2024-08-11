@@ -1,7 +1,7 @@
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+#include "..\Adafruit_SH1106.h"
 
 // OLED FeatherWing buttons map to different pins depending on board.
 // The I2C (Wire) bus may also be different.
@@ -47,14 +47,14 @@
   #define WIRE Wire
 #endif
 
-Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &WIRE);
+Adafruit_SH1106 display = Adafruit_SH1106(128, 32, &WIRE);
 
 void setup() {
   Serial.begin(9600);
 
   Serial.println("OLED FeatherWing test");
-  // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // Address 0x3C for 128x32
+  // SH1106_SWITCHCAPVCC = generate display voltage from 3.3V internally
+  display.begin(SH1106_SWITCHCAPVCC, 0x3C); // Address 0x3C for 128x32
 
   Serial.println("OLED begun");
 
@@ -76,7 +76,7 @@ void setup() {
 
   // text display tests
   display.setTextSize(1);
-  display.setTextColor(SSD1306_WHITE);
+  display.setTextColor(SH1106_WHITE);
   display.setCursor(0,0);
   display.print("Connecting to SSID\n'adafruit':");
   display.print("connected!");
